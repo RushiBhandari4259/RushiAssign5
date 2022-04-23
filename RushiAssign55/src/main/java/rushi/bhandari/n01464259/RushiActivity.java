@@ -3,6 +3,7 @@ package rushi.bhandari.n01464259;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import android.os.Bundle;
@@ -59,6 +60,56 @@ public class RushiActivity extends AppCompatActivity implements NavigationView.O
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return false;
+        int id = item.getItemId();
+
+        switch (id) {
+            //Opening home fragment
+            case R.id.rushiHomeFramentId:
+                if (this.homeFragment == null) this.homeFragment = HomeFragment.newInstance();
+                this.startTransactionFragment(this.homeFragment);
+                break;
+            //Opening download fragment
+            case R.id.rushiDownloadFragmentId:
+                if (this.downloadFragment == null)
+                    this.downloadFragment = DownloadFragment.newInstance();
+                this.startTransactionFragment(this.downloadFragment);
+                break;
+//Opening fragment weather
+            case R.id.rushiWeatherFragmentId:
+                if (this.weatherFragment == null) this.weatherFragment = WeatherFragment.newInstance();
+                this.startTransactionFragment(this.weatherFragment);
+                break;
+//Opening fragment shapes
+            case R.id.rushiShapesFragmentId:
+                if (this.shapesFragment == null)
+                    this.shapesFragment = ShapesFragmenty.newInstance();
+                this.startTransactionFragment(this.shapesFragment);
+                break;
+//Opening fragment files
+            case R.id.rushiFilesFragmentId:
+                if (this.filesFragment == null)
+                    this.filesFragment = FilesFragment.newInstance();
+                this.startTransactionFragment(this.filesFragment);
+                break;
+            //Opening fragment Settings
+            case R.id.rushiSettingsFragmentId:
+                if (this.settingsFragment == null)
+                    this.settingsFragment = SettingsFragment.newInstance();
+                this.startTransactionFragment(this.settingsFragment);
+                break;
+
+            default:
+                break;
+        }
+        this.drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+    //Transaction for the fragment to open
+    private void startTransactionFragment(Fragment fragment) {
+        if (!fragment.isVisible()) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.rushiFrameLayout, fragment).commit();
+        }
+
     }
 }
