@@ -7,6 +7,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -55,6 +61,46 @@ public class FilesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_files, container, false);
+        View view = inflater.inflate(R.layout.fragment_files, container, false);
+        Button GetContentButton = view.findViewById(R.id.rushiFilesFragmentIdGetContentButton);
+        String filename="rushi.txt";
+        TextView contentView = view.findViewById(R.id.rushiFilesFragmentIdFileContentDisplay);
+
+        GetContentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    FileInputStream fin = getActivity().openFileInput(filename);
+                    int a;
+                    StringBuilder temp = new StringBuilder();
+                    while((a = fin.read())!= -1){
+                        temp.append((char)a);
+
+                    }
+                    contentView.setText(temp.toString());
+                    fin.close();
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        Button deleteButton = view.findViewById(R.id.rushiFilesFragmentIdDeleteButton);
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                File fileToDelete = new File("/data/data/n01464259.bhandari.rushi/files/rushi.txt");
+                fileToDelete.delete();
+                contentView.setText("File deleted");
+
+            }
+        });
+
+
+
+
+        return view;
+
     }
 }

@@ -1,6 +1,8 @@
 package rushi.bhandari.n01464259;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -105,5 +107,33 @@ public class HomeFragment extends Fragment {
         });
 
         return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState){
+        super.onViewCreated(view, savedInstanceState);
+
+        //Changing Clock Format
+        SharedPreferences dateFormatSharePref = getActivity().getPreferences(Context.MODE_PRIVATE);
+        int formatCode = dateFormatSharePref.getInt("Format", 200);
+        Date c = Calendar.getInstance().getTime();
+        TextClock timeDisplay = view.findViewById(R.id.rushiHomeFramentIdTimeDisplay);
+        if(formatCode == 1){
+
+        }else if (formatCode ==2 ){
+
+        }
+
+        //changing Background color
+        SharedPreferences sharedpref = getActivity().getPreferences(Context.MODE_PRIVATE);
+        int BackgroundColor = sharedpref.getInt("Color",222);
+        if(BackgroundColor ==1){
+            getView().setBackgroundColor(Color.RED);
+        }else if(BackgroundColor == 2){
+            getView().setBackgroundColor(Color.BLUE);
+
+        }else if(BackgroundColor == 3){
+            getView().setBackgroundColor(Color.CYAN);
+        }
     }
 }

@@ -1,14 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rushiSettingsFragmentId"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SettingsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/rushiSettingsFragmentIdTitle"
+        android:layout_width="218dp"
+        android:layout_height="72dp"
+        android:text="Settings Frag"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024" />
 
-</FrameLayout>
+    <RadioGroup
+        android:id="@+id/rushiSettingsFragmentIdRadioGroup"
+        android:layout_width="197dp"
+        android:layout_height="136dp"
+        android:layout_marginStart="192dp"
+        android:layout_marginTop="100dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/rushiSettingsFragmentIdRadioButtonRed"
+            android:layout_width="101dp"
+            android:layout_height="wrap_content"
+            android:text="Color 1" />
+
+        <RadioButton
+            android:id="@+id/rushiSettingsFragmentIdRadioButtonBlue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Color 2" />
+
+        <RadioButton
+            android:id="@+id/rushiSettingsFragmentIdRadioButtonCyan"
+            android:layout_width="77dp"
+            android:layout_height="wrap_content"
+            android:text="Color 3" />
+
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/rushiSettingsFragmentIdHomeBgColorLabel"
+        android:layout_width="176dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="100dp"
+        android:text="Select one color"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/rushiSettingsFragmentIdTempUnitLabel"
+        android:layout_width="144dp"
+        android:layout_height="98dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="258dp"
+        android:text="Temperature format"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/rushiSettingsFragmentIdRadioGroup2"
+        android:layout_width="233dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="172dp"
+        android:layout_marginTop="264dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/rushiSettingsFragmentIdRadioButtonCelsius"
+            android:layout_width="122dp"
+            android:layout_height="wrap_content"
+            android:text="Celsius" />
+
+        <RadioButton
+            android:id="@+id/rushiSettingsFragmentIdRadioButtonFahrenheit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Fahrenheit" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/rushiSettingsFragmentIdRadioGroup3"
+        android:layout_width="212dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="372dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/rushiSettingsFragmentIdRadioButtonT12"
+            android:layout_width="98dp"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="12 Hours" />
+
+        <RadioButton
+            android:id="@+id/rushiSettingsFragmentIdRadioButtonT24"
+            android:layout_width="103dp"
+            android:layout_height="wrap_content"
+            android:text="24 Hours" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/rushiSettingsFragmentIdTimeIUnitOptionLabel"
+        android:layout_width="147dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="373dp"
+        android:text="Time format"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/rushiSettingsFragmentIdChangesApplyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="588dp"
+        android:text="Apply Changes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="338dp"
+        android:layout_height="81dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="484dp"
+        android:text="Portrait Mode Option"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

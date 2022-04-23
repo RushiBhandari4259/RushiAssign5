@@ -1,4 +1,6 @@
 package rushi.bhandari.n01464259;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
@@ -189,7 +191,16 @@ public class WeatherFragment extends Fragment {
                 }
                 //
                 JSONObject dataObject = weatherJson.getJSONObject("main");
-                strResults += "\ntemp: " + dataObject.getString("temp");
+                //Changing Temperature unit
+                SharedPreferences sharedPreferences= getActivity().getPreferences(Context.MODE_PRIVATE);
+                int TempUnit = sharedPreferences.getInt("Temp",222);
+                if(TempUnit == 1){
+                    int Temprature = dataObject.getInt("temp");
+                    int tempConverted = ((Temprature-32)*5)/9;
+                    strResults += "\ntemp: " +tempConverted+" C";
+                }else{
+                    strResults += "\ntemp: " + dataObject.getString("temp")+" F";
+                }
                 strResults += "\nhumidity: " + dataObject.getString("humidity");
                 strResults += "\ntemp_min: " + dataObject.getString("temp_min");
                 strResults += "\ntemp_max: " + dataObject.getString("temp_max");
