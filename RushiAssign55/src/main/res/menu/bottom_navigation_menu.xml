@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Rushi Bhandari RNB-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/rushiHomeFramentId"
+
+            android:title="Home" />
+        <item
+            android:id="@+id/rushiDownloadFragmentId"
+            android:title="Downloads"/>
+    </group>
+
+
+
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/rushiWeatherFragmentId"
+
+                    android:title="Weather" />
+                <item
+                    android:id="@+id/rushiFilesFragmentId"
+                    android:title="Files"
+                    />
+
+                <item
+                    android:id="@+id/rushiShapesFragmentId"
+                    android:title="Shapes"
+              />
+
+            </group>
+
+
+    <item android:title="Setting">
+        <menu>
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/rushiSettingsFragmentId"
+                    android:title="Settings" />
+            </group>
+        </menu>
+
+    </item>
+
+</menu>
