@@ -8,6 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link ShapesFragmenty#newInstance} factory method to
@@ -56,6 +59,15 @@ public class ShapesFragmenty extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_shapes_fragmenty, container, false);
+        View view = inflater.inflate(R.layout.fragment_shapes_fragmenty, container, false);
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance("https://rushiassign5-default-rtdb.firebaseio.com/");
+        DatabaseReference myRef = database.getReference("message");
+
+        myRef.setValue("Hello, World!");
+
+
+
+        return view;
     }
 }

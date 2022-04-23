@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1097612188481",
+    "project_id": "rushiassign5",
+    "storage_bucket": "rushiassign5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1097612188481:android:d252d1365adf2597b5dfc0",
+        "android_client_info": {
+          "package_name": "rushi.bhandari.n01464259"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1097612188481-fv07o6kctvmhmmhv5nkft3hn1851r1ev.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDn1YcM4LutkBbc2MEh0wk0QVz7zFXUXXU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1097612188481-fv07o6kctvmhmmhv5nkft3hn1851r1ev.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
