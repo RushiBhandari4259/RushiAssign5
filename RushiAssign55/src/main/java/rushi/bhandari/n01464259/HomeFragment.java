@@ -1,5 +1,6 @@
 package rushi.bhandari.n01464259;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,17 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextClock;
+import android.widget.TextView;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -54,7 +66,44 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+
+        Date c = Calendar.getInstance().getTime();
+        //Displaying date
+        TextView dateDisplay= view.findViewById(R.id.rushiHomeFramentIdDateShow);
+        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy", Locale.getDefault());
+        String formattedDate = df.format(c);
+        dateDisplay.setText(formattedDate);
+
+        //Displaying time
+        TextClock timeDisplay = view.findViewById(R.id.rushiHomeFramentIdTimeDisplay);
+        SimpleDateFormat tf = new SimpleDateFormat("HH:mm:ss",Locale.getDefault());
+        String formattedTime = tf.format(c);
+
+        //Files
+        String filename = "rushi.txt";
+        Button saveButton = view.findViewById(R.id.rushiHomeFramentIdSaveButton);
+        EditText userInput = view.findViewById(R.id.rushiHomeFramentIdEditText);
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    FileOutputStream fos = getActivity().openFileOutput(filename, Context.MODE_APPEND);
+                    String data = userInput.getText().toString();
+                    fos.write(data.getBytes());
+                    fos.flush();
+                    fos.close();
+
+
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                userInput.setText("");
+            }
+        });
+
+        return view;
     }
 }
