@@ -4,4 +4,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="navi_open">open</string>
     <string name="navi_close">close</string>
+    <string-array name="rushiAutoCompleteEmailArray">
+        Rushi123@gmail.com
+        rushi321@hotmail.com
+        rushiBhandari789@outlook.com
+        Astha@sgmail.com
+    </string-array>
 </resources>
