@@ -90,6 +90,21 @@ public class ShapesFragmenty extends Fragment {
                     String autoTextData = autoCompleteTextView.getText().toString();
                     myRef.setValue(autoTextData);
                     autoCompleteTextView.setText("");
+                }else if(firebaseSwitch.isChecked() == false){
+                    myRef = database.getReference("Emails");
+                    myRef.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            String value = snapshot.getValue(String.class);
+                            TextView textViewTDisplay = view.findViewById(R.id.rushiShapesFragmentIdFireDataBaseStorageDataDisplay);
+                            textViewTDisplay.setText(value);
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
                 }
             }
         });
