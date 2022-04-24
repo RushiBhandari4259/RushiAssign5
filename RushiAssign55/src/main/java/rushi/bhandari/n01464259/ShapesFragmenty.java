@@ -15,6 +15,12 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -106,6 +112,16 @@ public class ShapesFragmenty extends Fragment {
                         }
                     });
                 }
+                MobileAds.initialize(getContext(), new OnInitializationCompleteListener() {
+                    @Override
+                    public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
+
+                    }
+
+                });
+
+             
+
             }
         });
 
