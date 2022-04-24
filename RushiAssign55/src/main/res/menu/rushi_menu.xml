@@ -12,6 +12,7 @@
     <item
         android:title="@string/message"
         android:id="@+id/rushi_id_menu_sms"
+        android:icon="@drawable/ic_action_message"
         app:showAsAction="always"/>
 
 </menu>
