@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Rushi Bhandari N01464259 RNB -->
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,7 +13,7 @@
         android:id="@+id/rushiSettingsFragmentIdTitle"
         android:layout_width="218dp"
         android:layout_height="72dp"
-        android:text="Settings Frag"
+        android:text="@string/settings_frag"
         android:textAlignment="center"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -36,19 +38,19 @@
             android:id="@+id/rushiSettingsFragmentIdRadioButtonRed"
             android:layout_width="101dp"
             android:layout_height="wrap_content"
-            android:text="Color 1" />
+            android:text="@string/color_1" />
 
         <RadioButton
             android:id="@+id/rushiSettingsFragmentIdRadioButtonBlue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Color 2" />
+            android:text="@string/color_2" />
 
         <RadioButton
             android:id="@+id/rushiSettingsFragmentIdRadioButtonCyan"
             android:layout_width="77dp"
             android:layout_height="wrap_content"
-            android:text="Color 3" />
+            android:text="@string/color_3" />
 
 
     </RadioGroup>
@@ -59,7 +61,7 @@
         android:layout_height="79dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="100dp"
-        android:text="Select one color"
+        android:text="@string/select_one_color"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -70,7 +72,7 @@
         android:layout_height="98dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="258dp"
-        android:text="Temperature format"
+        android:text="@string/temperature_format"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -89,14 +91,14 @@
             android:id="@+id/rushiSettingsFragmentIdRadioButtonCelsius"
             android:layout_width="122dp"
             android:layout_height="wrap_content"
-            android:text="Celsius" />
+            android:text="@string/celsius" />
 
         <RadioButton
             android:id="@+id/rushiSettingsFragmentIdRadioButtonFahrenheit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="Fahrenheit" />
+            android:text="@string/fahrenheit" />
     </RadioGroup>
 
     <RadioGroup
@@ -114,13 +116,13 @@
             android:layout_width="98dp"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="12 Hours" />
+            android:text="@string/_12_hours" />
 
         <RadioButton
             android:id="@+id/rushiSettingsFragmentIdRadioButtonT24"
             android:layout_width="103dp"
             android:layout_height="wrap_content"
-            android:text="24 Hours" />
+            android:text="@string/_24_hours" />
     </RadioGroup>
 
     <TextView
@@ -129,7 +131,7 @@
         android:layout_height="52dp"
         android:layout_marginStart="11dp"
         android:layout_marginTop="373dp"
-        android:text="Time format"
+        android:text="@string/time_format"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -140,7 +142,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="236dp"
         android:layout_marginTop="588dp"
-        android:text="Apply Changes"
+        android:text="@string/apply_changes"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -150,7 +152,7 @@
         android:layout_height="81dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="484dp"
-        android:text="Portrait Mode Option"
+        android:text="@string/portrait_mode_option"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
