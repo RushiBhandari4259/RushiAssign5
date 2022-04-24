@@ -36,6 +36,7 @@ public class ShapesFragmenty extends Fragment {
     Switch firebaseSwitch;
     FirebaseDatabase database;
     DatabaseReference myRef;
+    int adClickCounter;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -125,20 +126,23 @@ public class ShapesFragmenty extends Fragment {
                 AdRequest adRequest = new AdRequest.Builder().build();
                 adView.loadAd(adRequest);
 
+                 adClickCounter = 0;
                 adView.setAdListener(new AdListener() {
                     @Override
                     public void onAdClicked() {
                         super.onAdClicked();
+                        FirebaseDatabase AdDatabase = FirebaseDatabase.getInstance();
+                        DatabaseReference myRef = database.getReference("Advertisement Click Counter");
+                        myRef.setValue(adClickCounter);
+
+                        Toast.makeText(getContext(),"Ad clicked!",Toast.LENGTH_SHORT).show();
+                        adClickCounter++;
 
                     }
                 });
 
             }
         });
-
-
-
-
 
         autoCompleteTextView.setThreshold(1);
         autoCompleteTextView.setAdapter(adapter);
