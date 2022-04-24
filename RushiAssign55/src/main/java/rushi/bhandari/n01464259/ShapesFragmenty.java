@@ -120,7 +120,18 @@ public class ShapesFragmenty extends Fragment {
 
                 });
 
-             
+                AdView adView = view.findViewById(R.id.rushiAdview);
+
+                AdRequest adRequest = new AdRequest.Builder().build();
+                adView.loadAd(adRequest);
+
+                adView.setAdListener(new AdListener() {
+                    @Override
+                    public void onAdClicked() {
+                        super.onAdClicked();
+
+                    }
+                });
 
             }
         });
